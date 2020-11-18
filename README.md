@@ -6,7 +6,7 @@ Ubuntu 18.04LTS+, with NVIDIA gpu(s) installed
 - requires: lm-sensors and moreutils installed to run properly (will prompt you to install them if you start without them)
 
 # How to use:
-1. clone this repository with sudo git clone https://scotchman0/GPU-heat-logging or copy the contents of the gpu-heat-log.sh into a new script file on your endpoint
+1. clone this repository with 'sudo git clone https://scotchman0/GPU-heat-logging' or copy the contents of the gpu-heat-log.sh into a new script file on your endpoint
 
 2. make the script executable with chmod +x gpu-heat-logging.sh
 
