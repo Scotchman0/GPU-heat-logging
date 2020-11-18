@@ -4,6 +4,7 @@ Quick and dirty script to grep nvidia-SMI temps, and CPU temps, write them to lo
 # supported systems: 
 Ubuntu 18.04LTS+, with NVIDIA gpu(s) installed
 - requires: lm-sensors and moreutils installed to run properly (will prompt you to install them if you start without them)
+- lm-sensors looks at CPU cores temperatures, and moreutils includes the 'ts' command needed for stamping date/time in the logs.
 
 # How to use:
 1. clone this repository with 'sudo git clone https://scotchman0/GPU-heat-logging' or copy the contents of the gpu-heat-log.sh into a new script file on your endpoint
