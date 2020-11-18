@@ -17,7 +17,7 @@ echo "_________________________" >> ~/Desktop/GPU_HEAT.log
 }
 
 NVIDIA_LOOP_LIVE() {
-nvidia-smi --query-gpu=index,name,temperature.gpu --format=csv,noheader | tee -a >> ~/Desktop/GPU_HEAT.log
+nvidia-smi --query-gpu=index,name,temperature.gpu --format=csv,noheader | ts | tee -a >> ~/Desktop/GPU_HEAT.log
 echo "_________________________"
 echo "_________________________" >> ~/Desktop/GPU_HEAT.log
 }
