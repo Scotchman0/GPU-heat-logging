@@ -47,6 +47,7 @@ lm-sensors_check() {
 	if which sensors | grep "/"
 		then echo "sensors available"
 		else echo "lm-sensors not installed, please run: 'sudo apt install lm-sensors' before running script" && exit_early
+fi
 }
 
 exit_early() {
