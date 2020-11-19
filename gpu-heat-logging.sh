@@ -81,7 +81,8 @@ sleep 2
 echo ""
 echo "select number of lines you want to capture (1-99999)"
 read LOGTIME
-echo "you've selected $LOGTIME seconds to run"
+echo "you've selected $LOGTIME greps to capture - if you've selected 1 second on the first prompt, this is roughly the same ammount of time it'll take to complete"
+echo "if you chose 2 seconds - double it - etc"
 echo "you can always ctrl + c to cancel out and review logs early"
 sleep 1
 echo ""
