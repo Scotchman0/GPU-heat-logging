@@ -65,6 +65,9 @@ chown $USER ~/Desktop/CPU_HEAT.log
 chown $USER ~/Desktop/GPU_HEAT.log
 
 timestamp_check
+sleep 1
+lm-sensors_check
+sleep 1
 
 echo "Quick and Dirty heat logging system for troubleshooting only"
 echo "this script is going to generate a fairly lengthy set of logs, so don't run it indefinitely"
