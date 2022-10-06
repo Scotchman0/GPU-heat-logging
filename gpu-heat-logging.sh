@@ -11,6 +11,12 @@
 #for live view + logging
 RED_TEXT=$(printf "\033[31m")
 
+POWERDRAW() {
+
+nvidia-smi --loop-ms=20 --format=csv,noheader,nounits --query-gpu=power.draw > ~/Desktop/GPU_POWER.log
+
+}
+
 NVIDIA_LOOP_QUIET() {
 nvidia-smi --query-gpu=index,name,temperature.gpu --format=csv,noheader | ts >> ~/Desktop/GPU_HEAT.log
 echo "_________________________" >> ~/Desktop/GPU_HEAT.log
@@ -60,9 +66,11 @@ whoami=USER
 #create files:
 touch ~/Desktop/CPU_HEAT.log
 touch ~/Desktop/GPU_HEAT.log
+touch ~/Desktop/GPU_POWER.log
 
 chown $USER ~/Desktop/CPU_HEAT.log
 chown $USER ~/Desktop/GPU_HEAT.log
+chown $USER ~/Desktop/GPU_POWER.log
 
 timestamp_check
 sleep 1
@@ -93,6 +101,7 @@ case "$choice" in
   y|Y ) 
 for ((i = 0 ; i <=$LOGTIME ; i++));
 do
+POWERDRAW
 NVIDIA_LOOP_LIVE
 SENSORS_LOOP_LIVE
 echo "check $i completed"
@@ -102,6 +111,7 @@ done
   n|N ) 
 for ((i = 0 ; i <=$LOGTIME ; i++));
 do
+POWERDRAW
 NVIDIA_LOOP_QUIET
 SENSORS_LOOP_QUIET
 echo "check $i completed"
